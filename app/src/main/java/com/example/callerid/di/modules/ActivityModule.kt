@@ -7,8 +7,5 @@ import dagger.Provides
 
 @Module
 class ActivityModule(val activityContext: Context) {
-    @Provides
-    fun provideMyAdapter(): MyAdapter {
-        return MyAdapter(actCotext = activityContext, arrayList = ArrayList())
-    }
+
 }

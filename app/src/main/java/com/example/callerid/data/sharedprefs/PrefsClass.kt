@@ -4,12 +4,13 @@ import android.content.SharedPreferences
 import javax.inject.Inject
 
 class PrefsClass @Inject constructor(val sharedPrefs: SharedPreferences) : PrefsFace {
+
     override fun saveUserName(userName: String) {
         sharedPrefs.edit().putString("USERNAME", userName).apply()
     }
 
     override fun savePassword(password: String) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        sharedPrefs.edit().putString("PASSWORD", password).apply()
     }
 
 
@@ -18,7 +19,7 @@ class PrefsClass @Inject constructor(val sharedPrefs: SharedPreferences) : Prefs
     }
 
     override fun getPassword(): String {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        return sharedPrefs.getString("PASSWORD", "")!!
     }
 
 }

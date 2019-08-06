@@ -7,5 +7,5 @@ import retrofit2.http.Query
 
 interface ApiClient {
     @GET("")
-    fun  doLogin(@Query("uname") username:String,@Query("password") password:String): Call<List<String>>
+    fun doLogin(@Query("uname") username: String, @Query("password") password: String): Call<List<String>>
 }
